@@ -1,4 +1,4 @@
-module github.com/fatisar/go-ethereum
+module github.com/ethereum/go-ethereum
 
 go 1.12
 
@@ -73,3 +73,5 @@ require (
 	gopkg.in/urfave/cli.v1 v1.20.0
 	gotest.tools v2.2.0+incompatible // indirect
 )
+
+replace github.com/ethereum/go-ethereum => github.com/fatisar/go-ethereum v1.8.31
