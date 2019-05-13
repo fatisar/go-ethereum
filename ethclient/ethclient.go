@@ -269,12 +269,11 @@ func (ec *Client) TransactionReceipt(ctx context.Context, txHash common.Hash) (*
 
 func toBlockNumArg(number *big.Int) string {
 	switch (number) {
-	case nil:
-	case rpc.LatestBlockNumber:
+	case big.NewInt(rpc.LatestBlockNumber.Int64()):
 		return "latest"
-	case rpc.PendingBlockNumber:
+	case big.NewInt(rpc.PendingBlockNumber.Int64()):
 		return "pending"
-	case rpc.EarliestBlockNumber:
+	case big.NewInt(rpc.EarliestBlockNumber.Int64()):
 		return "earliest"
 	default:
 		return hexutil.EncodeBig(number)
